@@ -10,7 +10,7 @@ You can mail me [here](mailto:ochota.dariusz@gmail.com).
 ```markdown
 Chat
 
-# [deadjimjjxq5wbp5.onion](deadjimjjxq5wbp5.onion)
+# [deadjimjjxq5wbp5.onion]
 
 
 
