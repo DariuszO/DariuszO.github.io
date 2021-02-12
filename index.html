@@ -15,6 +15,7 @@
 		<meta name="og:description" content= "Ogrzewanie podłogowe">
 
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/table-vue.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
 		<link rel="preload" href="assets/js/jquery.min.js" as="script">
@@ -23,14 +24,40 @@
 		<link rel="preload" href="assets/js/main.js" as="script">
 		<link rel="preload" href="assets/js/util.js" as="script">		
 		<link rel="preload" href="assets/js/OpenLayers.js" as="script">
+		<link rel="preload" href="https://unpkg.com/vue@3.0.5/dist/vue.global.js" as="script">
+		<link rel="preload" href="assets/js/table-vue.js" as="script">
 		
 		<link rel="preload" href="images/bg2.webp" as="image">
 
 		<link rel="preload" href="assets/css/all.css" as="style">
 		<link rel="preload" href="assets/css/main.css" as="style">
+		<link rel="preload" href="assets/css/table-vue.css" as="style">
 
 		<link rel="preload" href="assets/webfonts/fa-brands-400.woff2" as="font">
 		<link rel="preload" href="assets/webfonts/fa-solid-900.woff2" as="font">
+		
+    <script type="text/x-template" id="grid-template">
+      <table>
+        <thead>
+          <tr>
+            <th v-for="key in columns"
+              @click="sortBy(key)"
+              :class="{ active: sortKey == key }">
+              {{ capitalize(key) }}
+              <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="entry in filteredHeroes">
+            <td v-for="key in columns">
+              {{ entry[key] }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </script>
 
 	</head>
 	<body class="is-preload">
@@ -122,6 +149,19 @@
 											</tfoot>
 										</table>
 									</div>
+									<div class="table-wrapper">
+										<div id="table-vue">
+										  <form id="search">
+											Szukaj <input name="query" v-model="searchQuery" />
+										  </form>
+										  <table-vue-grid
+											:heroes="gridData"
+											:columns="gridColumns"
+											:filter-key="searchQuery"
+										  >
+										  </table-vue-grid>
+										</div>
+									</div>
 							</article>
 
 						<!-- About -->
@@ -179,6 +219,9 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://unpkg.com/vue@3.0.5/dist/vue.global.js"></script>
+			<script src="assets/js/table-vue.js"></script>
+
 			<script src="assets/js/OpenLayers.js"></script>
 			<script>
 				var lat            = 49.7477554;
