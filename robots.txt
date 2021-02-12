@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+Sitemap: https://dariuszo.github.io/sitemap.xml
