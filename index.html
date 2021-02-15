@@ -1,116 +1,115 @@
 <!DOCTYPE HTML>
 <html lang="pl">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-		<title>Nawroth</title>
-		<meta name="title" content="Nawroth">
-		<meta name="description" content= "Ogrzewanie podłogowe">
-		<meta name="keywords" content"ogrzewanie podlogowe, ogrzewanie, nawroth">
-		<meta name=”language” CONTENT=”PL”>
-		<meta name="robots" content= "index, follow">
-		<meta property="og:type" content="website">
-		<meta name="og:title" content="Nawroth">
-		<meta name="og:description" content= "Ogrzewanie podłogowe">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/table-vue.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <title>Nawroth</title>
+    <meta name="title" content="Nawroth">
+    <meta name="description" content="Ogrzewanie podłogowe">
+    <meta name="keywords" content "ogrzewanie podlogowe, ogrzewanie, nawroth">
+    <meta name="language" content="pl">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta name="og:title" content="Nawroth">
+    <meta name="og:description" content="Ogrzewanie podłogowe">
 
-		<link rel="preload" href="assets/js/jquery.min.js" as="script">
-		<link rel="preload" href="assets/js/browser.min.js" as="script">
-		<link rel="preload" href="assets/js/breakpoints.min.js" as="script">
-		<link rel="preload" href="assets/js/main.js" as="script">
-		<link rel="preload" href="assets/js/util.js" as="script">		
-		<link rel="preload" href="assets/js/OpenLayers.js" as="script">
-		<link rel="preload" href="https://unpkg.com/vue@next" as="script">
-		<link rel="preload" href="assets/js/table-vue.js" as="script">
-		
-		<link rel="preload" href="images/bg2.webp" as="image">
+    <link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/table-vue.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<link rel="preload" href="assets/css/all.css" as="style">
-		<link rel="preload" href="assets/css/main.css" as="style">
-		<link rel="preload" href="assets/css/table-vue.css" as="style">
+    <link rel="preload" href="assets/js/jquery.min.js" as="script">
+    <link rel="preload" href="assets/js/browser.min.js" as="script">
+    <link rel="preload" href="assets/js/breakpoints.min.js" as="script">
+    <link rel="preload" href="assets/js/main.js" as="script">
+    <link rel="preload" href="assets/js/util.js" as="script">
+    <link rel="preload" href="assets/js/OpenLayers.js" as="script">
+    <link rel="preload" href="https://unpkg.com/vue@next" as="script">
+    <link rel="preload" href="assets/js/table-vue.js" as="script">
 
-		<link rel="preload" href="assets/webfonts/fa-brands-400.woff2" as="font">
-		<link rel="preload" href="assets/webfonts/fa-solid-900.woff2" as="font">
-		
-		<script type="text/x-template" id="grid-template">
-		  <table>
-			<thead>
-			  <tr>
-				<th v-for="key in columns"
-				  @click="sortBy(key)"
-				  :class="{ active: sortKey == key }">
-				  {{ capitalize(key) }}
-				  <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+    <link rel="preload" href="images/bg2.webp" as="image">
+
+    <link rel="preload" href="assets/css/all.css" as="style">
+    <link rel="preload" href="assets/css/main.css" as="style">
+    <link rel="preload" href="assets/css/table-vue.css" as="style">
+
+    <link rel="preload" href="assets/webfonts/fa-brands-400.woff2" as="font">
+    <link rel="preload" href="assets/webfonts/fa-solid-900.woff2" as="font">
+
+    <script type="text/x-template" id="grid-template">
+        <table>
+            <thead>
+                <tr>
+                    <th v-for="key in columns" @click="sortBy(key)" :class="{ active: sortKey == key }">
+                        {{ capitalize(key) }}
+                        <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
 				  </span>
-				</th>
-			  </tr>
-			</thead>
-			<tbody>
-			  <tr v-for="entry in filteredHeroes">
-				<td v-for="key in columns">
-				  {{ entry[key] }}
-				</td>
-			  </tr>
-			</tbody>
-		  </table>
-		</script>
-	</head>
-	<body class="is-preload">
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="entry in filteredHeroes">
+                    <td v-for="key in columns">
+                        {{ entry[key] }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </script>
+</head>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<body class="is-preload">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-						<span class="image main"><picture><source type="image/png" srcset="images/logo.png"><img src="images/logo.png" alt="" /></picture></span>
-							<!-- <span class="fa-4x fas fa-fire-alt"></span> -->
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Nawroth</h1>
-								<p>Ogrzewanie podłogowe.</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li>
-								<a href="#start">Start</a>
-								</li>
-								<li><a href="#oferta">Oferta</a></li>
-								<li><a href="#firma">O Nas</a></li>
-								<li><a href="#kontakt">Kontakt</a></li>
-							</ul>
-						</nav>
-					</header>
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-				<!-- Main -->
-					<div id="main">
+        <!-- Header -->
+        <header id="header">
+            <div class="logo">
+                <span class="image main"><picture><source type="image/png" srcset="images/logo.png"><img src="images/logo.png" alt="" /></picture></span>
+                <!-- <span class="fa-4x fas fa-fire-alt"></span> -->
+            </div>
+            <div class="content">
+                <div class="inner">
+                    <h1>Nawroth</h1>
+                    <p>Ogrzewanie podłogowe.</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#start">Start</a>
+                    </li>
+                    <li><a href="#oferta">Oferta</a></li>
+                    <li><a href="#firma">O Nas</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
 
-						<!-- Start -->
-							<article id="start">
-								<h2 class="major">Start</h2>
-								<span class="image main"><picture><source type="image/webp" srcset="images/pic01.webp"><img src="images/pic01.webp" alt="" /></picture></span>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-								<span class="image main"><picture><source type="image/png" srcset="1.png"><img src="1.png" align="center" alt="" /></picture></span>
-							</article>
+        <!-- Main -->
+        <div id="main">
 
-
-
-
-
-
-
-
-
+            <!-- Start -->
+            <article id="start">
+                <h2 class="major">Start</h2>
+                <span class="image main"><picture><source type="image/webp" srcset="images/pic01.webp"><img src="images/pic01.webp" alt="" /></picture></span>
+                <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus
+                    erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
+                <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus
+                    erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
+                <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus
+                    erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
+                <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus
+                    erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam
+                    venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque
+                    habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+                <span class="image main"><picture><source type="image/png" srcset="1.png"><img src="1.png" align="center" alt="" /></picture></span>
+            </article>
 
 
 
@@ -128,149 +127,164 @@
 
 
 
-						<!-- Work -->
-							<article id="oferta">
-								<h2 class="major">Oferta</h2>
-								<span class="image main"><picture><source type="image/webp" srcset="images/pic02.webp"><img src="images/pic02.webp" alt="" /></picture></span>
-								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
-									<h3 class="major">Produkty</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00<br><br><br><h4><a href="#kontakt">Kontakt</h4></a></td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-									<div class="table-wrapper">
-										<div id="table-vue">
-										  <form id="search">
-											Szukaj <input name="query" v-model="searchQuery" />
-										  </form>
-										  <table-vue-grid
-											:heroes="gridData"
-											:columns="gridColumns"
-											:filter-key="searchQuery"
-										  >
-										  </table-vue-grid>
-										</div>
-									</div>
-							</article>
 
-						<!-- About -->
-							<article id="firma">
-								<h2 class="major">O Nas</h2>
-								<span class="image main"><picture><source type="image/webp" srcset="images/pic03.webp"><img src="images/pic03.webp" alt="" /></picture></span>
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
-							</article>
 
-						<!-- Contact -->
-							<article id="kontakt">
-								<h2 class="major">Kontakt</h2>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th><i class="fa-xs fas fa-address-card"></i>&nbsp Nazwa</th>
-													<th><i class="fa-xs fas fa-building"></i>&nbsp Adres</th>
-													<th><i class="fa-xs fas fa-phone"></i>&nbsp Telefon</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Nawroth SA</td>
-													<td>ul. Trupia 40, 34-650 Piekiełko</td>
-													<td><a href="tel:+48505505505">505-505-505</a>, <a href="tel:+48505505506">505-505-506</a></td>
-												</tr>
-												<tr>
-													<br><center><th colspan="3"><br><center><div id="Map" style="height:280px;width:90%"></div></center></th>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td><i class="fa-xs fas fa-envelope"></i> &nbsp<a href="mailto:kontakt@nawroth.pl" target="blank">kontakt@nawroth.pl</a></td>
-												</tr>
-											</tfoot>
-										</table>
-										</div>
-							</article>
 
-					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">2021 &copy; NAWROTH.PL</p>
-					</footer>
 
-			</div>
 
-			<div id="bg"></div>
-			
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="https://unpkg.com/vue@next"></script>
-			<script src="assets/js/table-vue.js"></script>
-			<script src="assets/js/OpenLayers.js"></script>
-			<script>
-				var lat            = 49.7477554;
-				var lon            = 20.3420313;
-				var zoom           = 17;
 
-				var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
-				var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
-				var position       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection);
 
-				map = new OpenLayers.Map("Map");
-				var mapnik         = new OpenLayers.Layer.OSM();
-				map.addLayer(mapnik);
 
-				var markers = new OpenLayers.Layer.Markers( "Markers" );
-				map.addLayer(markers);
-				markers.addMarker(new OpenLayers.Marker(position));
+            <!-- Work -->
+            <article id="oferta">
+                <h2 class="major">Oferta</h2>
+                <span class="image main"><picture><source type="image/webp" srcset="images/pic02.webp"><img src="images/pic02.webp" alt="" /></picture></span>
+                <p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
+                <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque
+                    lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+                <h3 class="major">Produkty</h3>
+                <h4>Default</h4>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Item One</td>
+                                <td>Ante turpis integer aliquet porttitor.</td>
+                                <td>29.99</td>
+                            </tr>
+                            <tr>
+                                <td>Item Two</td>
+                                <td>Vis ac commodo adipiscing arcu aliquet.</td>
+                                <td>19.99</td>
+                            </tr>
+                            <tr>
+                                <td>Item Three</td>
+                                <td> Morbi faucibus arcu accumsan lorem.</td>
+                                <td>29.99</td>
+                            </tr>
+                            <tr>
+                                <td>Item Four</td>
+                                <td>Vitae integer tempus condimentum.</td>
+                                <td>19.99</td>
+                            </tr>
+                            <tr>
+                                <td>Item Five</td>
+                                <td>Ante turpis integer aliquet porttitor.</td>
+                                <td>29.99</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td>100.00<br><br><br>
+                                    <h4><a href="#kontakt">Kontakt</h4></a></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="table-wrapper">
+                    <div id="table-vue">
+                        <form id="search">
+                            Szukaj <input name="query" v-model="searchQuery" />
+                        </form>
+                        <table-vue-grid :heroes="gridData" :columns="gridColumns" :filter-key="searchQuery">
+                        </table-vue-grid>
+                    </div>
+                </div>
+            </article>
 
-				map.setCenter(position, zoom);
-			</script>
-	</body>
+            <!-- About -->
+            <article id="firma">
+                <h2 class="major">O Nas</h2>
+                <span class="image main"><picture><source type="image/webp" srcset="images/pic03.webp"><img src="images/pic03.webp" alt="" /></picture></span>
+                <p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris
+                    nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+            </article>
+
+            <!-- Contact -->
+            <article id="kontakt">
+                <h2 class="major">Kontakt</h2>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th><i class="fa-xs fas fa-address-card"></i>&nbsp Nazwa</th>
+                                <th><i class="fa-xs fas fa-building"></i>&nbsp Adres</th>
+                                <th><i class="fa-xs fas fa-phone"></i>&nbsp Telefon</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nawroth SA</td>
+                                <td>ul. Trupia 40, 34-650 Piekiełko</td>
+                                <td><a href="tel:+48505505505">505-505-505</a>, <a href="tel:+48505505506">505-505-506</a></td>
+                            </tr>
+                            <tr>
+                                <br>
+                                <center>
+                                    <th colspan="3"><br>
+                                        <center>
+                                            <div id="Map" style="height:280px;width:90%"></div>
+                                        </center>
+                                    </th>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td><i class="fa-xs fas fa-envelope"></i> &nbsp<a href="mailto:kontakt@nawroth.pl" target="blank">kontakt@nawroth.pl</a></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright">2021 &copy; NAWROTH.PL</p>
+        </footer>
+
+    </div>
+
+    <div id="bg"></div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="assets/js/table-vue.js"></script>
+    <script src="assets/js/OpenLayers.js"></script>
+    <script>
+        var lat = 49.7477554;
+        var lon = 20.3420313;
+        var zoom = 17;
+
+        var fromProjection = new OpenLayers.Projection("EPSG:4326"); // Transform from WGS 1984
+        var toProjection = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+        var position = new OpenLayers.LonLat(lon, lat).transform(fromProjection, toProjection);
+
+        map = new OpenLayers.Map("Map");
+        var mapnik = new OpenLayers.Layer.OSM();
+        map.addLayer(mapnik);
+
+        var markers = new OpenLayers.Layer.Markers("Markers");
+        map.addLayer(markers);
+        markers.addMarker(new OpenLayers.Marker(position));
+
+        map.setCenter(position, zoom);
+    </script>
+</body>
+
 </html>
