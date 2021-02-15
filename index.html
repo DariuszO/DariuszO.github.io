@@ -24,7 +24,7 @@
 		<link rel="preload" href="assets/js/main.js" as="script">
 		<link rel="preload" href="assets/js/util.js" as="script">		
 		<link rel="preload" href="assets/js/OpenLayers.js" as="script">
-		<link rel="preload" href="https://unpkg.com/vue@3.0.5/dist/vue.global.js" as="script">
+		<link rel="preload" href="https://unpkg.com/vue@next" as="script">
 		<link rel="preload" href="assets/js/table-vue.js" as="script">
 		
 		<link rel="preload" href="images/bg2.webp" as="image">
@@ -36,29 +36,28 @@
 		<link rel="preload" href="assets/webfonts/fa-brands-400.woff2" as="font">
 		<link rel="preload" href="assets/webfonts/fa-solid-900.woff2" as="font">
 		
-    <script type="text/x-template" id="grid-template">
-      <table>
-        <thead>
-          <tr>
-            <th v-for="key in columns"
-              @click="sortBy(key)"
-              :class="{ active: sortKey == key }">
-              {{ capitalize(key) }}
-              <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
-              </span>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="entry in filteredHeroes">
-            <td v-for="key in columns">
-              {{ entry[key] }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </script>
-
+		<script type="text/x-template" id="grid-template">
+		  <table>
+			<thead>
+			  <tr>
+				<th v-for="key in columns"
+				  @click="sortBy(key)"
+				  :class="{ active: sortKey == key }">
+				  {{ capitalize(key) }}
+				  <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+				  </span>
+				</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr v-for="entry in filteredHeroes">
+				<td v-for="key in columns">
+				  {{ entry[key] }}
+				</td>
+			  </tr>
+			</tbody>
+		  </table>
+		</script>
 	</head>
 	<body class="is-preload">
 
@@ -68,7 +67,8 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="logo">
-							<span class="fa-4x fas fa-fire-alt"></span>
+						<span class="image main"><picture><source type="image/png" srcset="images/logo.png"><img src="images/logo.png" alt="" /></picture></span>
+							<!-- <span class="fa-4x fas fa-fire-alt"></span> -->
 						</div>
 						<div class="content">
 							<div class="inner">
@@ -78,7 +78,9 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#start">Start</a></li>
+								<li>
+								<a href="#start">Start</a>
+								</li>
 								<li><a href="#oferta">Oferta</a></li>
 								<li><a href="#firma">O Nas</a></li>
 								<li><a href="#kontakt">Kontakt</a></li>
@@ -94,8 +96,37 @@
 								<h2 class="major">Start</h2>
 								<span class="image main"><picture><source type="image/webp" srcset="images/pic01.webp"><img src="images/pic01.webp" alt="" /></picture></span>
 								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
+								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
+								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
+								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+								<span class="image main"><picture><source type="image/png" srcset="1.png"><img src="1.png" align="center" alt="" /></picture></span>
 							</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 						<!-- Work -->
 							<article id="oferta">
@@ -219,9 +250,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script src="https://unpkg.com/vue@3.0.5/dist/vue.global.js"></script>
+			<script src="https://unpkg.com/vue@next"></script>
 			<script src="assets/js/table-vue.js"></script>
-
 			<script src="assets/js/OpenLayers.js"></script>
 			<script>
 				var lat            = 49.7477554;
