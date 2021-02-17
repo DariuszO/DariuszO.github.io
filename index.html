@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
     <title>Nawroth</title>
+	
     <meta name="title" content="Nawroth">
     <meta name="description" content="Ogrzewanie podłogowe">
     <meta name="keywords" content "ogrzewanie podlogowe, ogrzewanie, nawroth">
@@ -16,28 +17,14 @@
     <meta name="og:description" content="Ogrzewanie podłogowe">
 
     <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/table-vue.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-    <link rel="preload" href="assets/js/jquery.min.js" as="script">
-    <link rel="preload" href="assets/js/browser.min.js" as="script">
-    <link rel="preload" href="assets/js/breakpoints.min.js" as="script">
-    <link rel="preload" href="assets/js/main.js" as="script">
-    <link rel="preload" href="assets/js/util.js" as="script">
-    <link rel="preload" href="assets/js/OpenLayers.js" as="script">
-    <link rel="preload" href="https://unpkg.com/vue@next" as="script">
-    <link rel="preload" href="assets/js/table-vue.js" as="script">
-
-    <link rel="preload" href="images/bg2.webp" as="image">
-
-    <link rel="preload" href="assets/css/all.css" as="style">
+	
     <link rel="preload" href="assets/css/main.css" as="style">
-    <link rel="preload" href="assets/css/table-vue.css" as="style">
-
-    <link rel="preload" href="assets/webfonts/fa-brands-400.woff2" as="font">
-    <link rel="preload" href="assets/webfonts/fa-solid-900.woff2" as="font">
+    <link rel="preload" href="assets/js/OpenLayers.js" as="script">
+    <link rel="preload" href="images/bg2.webp" as="image">
 
     <script type="text/x-template" id="grid-template">
         <table>
@@ -63,14 +50,11 @@
 
 <body class="is-preload">
 
-    <!-- Wrapper -->
     <div id="wrapper">
 
-        <!-- Header -->
         <header id="header">
             <div class="logo">
                 <span class="image main"><picture><source type="image/png" srcset="images/logo.png"><img src="images/logo.png" alt="" /></picture></span>
-                <!-- <span class="fa-4x fas fa-fire-alt"></span> -->
             </div>
             <div class="content">
                 <div class="inner">
@@ -90,10 +74,8 @@
             </nav>
         </header>
 
-        <!-- Main -->
         <div id="main">
 
-            <!-- Start -->
             <article id="start">
                 <h2 class="major">Start</h2>
                 <span class="image main"><picture><source type="image/webp" srcset="images/pic01.webp"><img src="images/pic01.webp" alt="" /></picture></span>
@@ -111,32 +93,6 @@
                 <span class="image main"><picture><source type="image/png" srcset="1.png"><img src="1.png" align="center" alt="" /></picture></span>
             </article>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- Work -->
             <article id="oferta">
                 <h2 class="major">Oferta</h2>
                 <span class="image main"><picture><source type="image/webp" srcset="images/pic02.webp"><img src="images/pic02.webp" alt="" /></picture></span>
@@ -144,45 +100,32 @@
                 <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque
                     lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
                 <h3 class="major">Produkty</h3>
-                <h4>Default</h4>
+				<h4>Szukaj</h4>
                 <div class="table-wrapper">
-                    <table>
+					<div id="table-vue">
+                        <form id="search">
+                            <input name="query" v-model="searchQuery" />
+                        </form>
+                        <table-vue-grid :heroes="gridData" :columns="gridColumns" :filter-key="searchQuery">
+                        </table-vue-grid>
+                    </div>
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Price</th>
+                                <th>&nbsp</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Item One</td>
-                                <td>Ante turpis integer aliquet porttitor.</td>
-                                <td>29.99</td>
-                            </tr>
-                            <tr>
-                                <td>Item Two</td>
-                                <td>Vis ac commodo adipiscing arcu aliquet.</td>
-                                <td>19.99</td>
-                            </tr>
-                            <tr>
-                                <td>Item Three</td>
-                                <td> Morbi faucibus arcu accumsan lorem.</td>
-                                <td>29.99</td>
-                            </tr>
-                            <tr>
-                                <td>Item Four</td>
-                                <td>Vitae integer tempus condimentum.</td>
-                                <td>19.99</td>
-                            </tr>
-                            <tr>
-                                <td>Item Five</td>
-                                <td>Ante turpis integer aliquet porttitor.</td>
-                                <td>29.99</td>
-                            </tr>
+                                <td colspan="3">&nbsp</td>
+                                <td></td>
+                                <td></td>
+							</tr>
                         </tbody>
                         <tfoot>
                             <tr>
+                                <td colspan="2"></td>
                                 <td colspan="2"></td>
                                 <td>100.00<br><br><br>
                                     <h4><a href="#kontakt">Kontakt</h4></a></td>
@@ -190,15 +133,7 @@
                         </tfoot>
                     </table>
                 </div>
-                <div class="table-wrapper">
-                    <div id="table-vue">
-                        <form id="search">
-                            Szukaj <input name="query" v-model="searchQuery" />
-                        </form>
-                        <table-vue-grid :heroes="gridData" :columns="gridColumns" :filter-key="searchQuery">
-                        </table-vue-grid>
-                    </div>
-                </div>
+
             </article>
 
             <!-- About -->
@@ -265,6 +200,7 @@
     <script src="assets/js/main.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="assets/js/table-vue.js"></script>
+    <script src="assets/js/data-vue.js"></script>
     <script src="assets/js/OpenLayers.js"></script>
     <script>
         var lat = 49.7477554;

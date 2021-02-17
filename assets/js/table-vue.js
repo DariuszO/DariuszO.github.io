@@ -8,7 +8,11 @@ const app = Vue.createApp({
         { Nazwa: '1. Item One', Opis: 'Ante turpis integer aliquet porttitor.', Cena: 19.99 },
         { Nazwa: '2. Item Two', Opis: 'Vis ac commodo adipiscing arcu aliquet.', Cena: 25.99 },
         { Nazwa: '3. Item Three', Opis: 'Morbi faucibus arcu accumsan lorem.', Cena: 59.99 },
-        { Nazwa: '4. Item Four', Opis: 'Ante turpis integer aliquet porttitor.', Cena: 29.99 }
+        { Nazwa: '4. Item Four', Opis: 'Ante turpis integer aliquet porttitor.', Cena: 29.99 },
+        { Nazwa: '5. Item Five', Opis: 'Ante turpis integer aliquet porttitor.', Cena: 29.99 },
+        { Nazwa: '6. Item Six', Opis: 'Vis ac commodo adipiscing arcu aliquet.', Cena: 69.99 },
+        { Nazwa: '7. Item Seven', Opis: 'Ante turpis integer aliquet porttitor.', Cena: 79.99 },
+        { Nazwa: '8. Item Eight', Opis: 'Morbi faucibus arcu accumsan lorem.', Cena: 59.99 }
       ]
     }
   }
