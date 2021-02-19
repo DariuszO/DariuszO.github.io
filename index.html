@@ -8,13 +8,20 @@
     <title>Nawroth</title>
 	
     <meta name="title" content="Nawroth">
-    <meta name="description" content="Ogrzewanie podłogowe">
-    <meta name="keywords" content "ogrzewanie podlogowe, ogrzewanie, nawroth">
+    <meta name="description" content="Naprawy bieżące systemów grzewczych (kotły gazowe, węglowe, elektryczne, olejowe, pompy ciepła), przeglądy okresowe miesięczne(klimatyzację, pompy ciepła, kotły), realizacja instalacji elektrycznych, grzewczych, sanitanych, rekuperacja, wentylacja, usługi pielęgnacyjne, zastrzyki, piaskowanie, śrutowanie.">
+    <meta name="category" content="Usługi wielobranżowe">
+    <meta name="keywords" content "usługi pielęgnacyjne, serwis urządzeń grzewczych, piaskowanie, śrutowanie, usuwanie rdzy, usuwanie zanieczyszczeń, naprawy hydrauliczne, przegląd kotła gazowego, zastrzyki, pielęgnacje odleżyn">
     <meta name="language" content="pl">
-    <meta name="robots" content="index, follow">
-    <meta property="og:type" content="website">
+    <meta name="robots" content="noindex,nofollow">
+	<meta property="og:type" content="website" />
+	<meta property="og:locale" content="pl_PL" />
+	<meta name='og:latitude' content='50.1891498'>
+	<meta name='og:longitude' content='19.3203815'>
+	<meta name='og:street-address' content='Grzybowa 11'>
+	<meta name='og:postal-code' content='43-600'>
+
     <meta name="og:title" content="Nawroth">
-    <meta name="og:description" content="Ogrzewanie podłogowe">
+    <meta name="og:description" content="Naprawy bieżące systemów grzewczych (kotły gazowe, węglowe, elektryczne, olejowe, pompy ciepła), przeglądy okresowe miesięczne(klimatyzację, pompy ciepła, kotły), realizacja instalacji elektrycznych, grzewczych, sanitanych, rekuperacja, wentylacja, usługi pielęgnacyjne, zastrzyki, piaskowanie, śrutowanie.">
 
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -39,32 +46,8 @@
 	<meta name="msapplication-TileImage" content="assets/img/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
     <link rel="preload" href="assets/css/all.css" as="style">
-    <link rel="preload" href="assets/css/table-vue.css" as="style">
-    <link rel="preload" href="assets/js/table-vue.js" as="script">
-    <link rel="preload" href="https://unpkg.com/vue@3.0.5/dist/vue.global.prod.js" as="script">
-    <link rel="preload" href="assets/js/OpenLayers.js" as="script">
     <link rel="preload" href="images/1.webp" as="image">
 
-    <script type="text/x-template" id="grid-template">
-        <table>
-            <thead>
-                <tr>
-                    <th v-for="key in columns" @click="sortBy(key)" :class="{ active: sortKey == key }">
-                        {{ capitalize(key) }}
-                        <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
-				  </span>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="entry in filteredHeroes">
-                    <td v-for="key in columns">
-                        {{ entry[key] }}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </script>
 </head>
 
 <body class="is-preload">
@@ -78,16 +61,14 @@
             <div class="content">
                 <div class="inner">
                     <h1>Nawroth</h1>
-                    <p>Ogrzewanie podłogowe.</p>
+                    <p>Przedsiębiorstwo wielobranżowe</p>
                 </div>
             </div>
             <nav>
                 <ul>
-                    <li>
-                        <a href="#start">Start</a>
-                    </li>
-                    <li><a href="#oferta">Oferta</a></li>
-                    <li><a href="#firma">O Nas</a></li>
+                    <li><a href="#uslugi-pielegniarskie">Usługi pielęgniarskie</a></li>
+                    <li><a href="#serwis-techniczny">Serwis Techniczny</a></li>
+                    <li><a href="#piaskowanie-srutowanie">Piaskowanie/Śrutowanie</a></li>
                     <li><a href="#kontakt">Kontakt</a></li>
                 </ul>
             </nav>
@@ -95,112 +76,198 @@
 
         <div id="main">
 
-            <article id="start">
-                <h2 class="major">Start</h2>
-                <span class="image main"><picture><source type="image/webp" srcset="images/pic01.webp"><img src="images/pic01.webp" alt="" /></picture></span>
-                <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus
-                    erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
-                <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus
-                    erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
-                <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus
-                    erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
-                <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus
-                    erat id euismod egestas. By the way, check out my <a href="#oferta">awesome work</a>.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam
-                    venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque
-                    habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-                <span class="image main"><picture><source type="image/webp" srcset="images/1.webp"><img src="1.webp" align="center" alt="" /></picture></span>
+            <article id="uslugi-pielegniarskie">
+                <h2 class="major">Usługi pielęgniarskie</h2>
+                <span class="image main"><picture><source type="image/webp" srcset="images/uslugi-pielegniarskie.webp"><img src="images/uslugi-pielegniarskie.webp" alt="Usługi Pielęgniarskie" /></picture></span>
+				<br>
+				<br>
+				<p>Oferujemy dla państwa szeroki wachlasz usług pielegniarskich z dojazdem do domu chorego. W swoim składzie posiadmy wykwialifikową kadrę medyczną z wieloletnim doświadczeniem oraz ukończonymi kursami specjalistycznymi. Pomagamy z zakresu opieki i pielegnacji nad osobami chorymi w naszej ofercie znajdziesz m.in.</p>
+					<ul>
+						<li>Toaleta ciała osób leżących,</li>
+						<li>Pielęgnacje odleżyn,</li>
+						<li>Pielegnacja owrzodzeń kończyn dolnych,</li>
+						<li>Iniekcje(zastrzyki) dożylne, podskórne, domięśniowe,</li>
+						<li>Zabieg stawiania baniek,</li>
+						<li>Kontrola poziomu cukru,</li>
+						<li>Pielęgnacja i wymiana stomii,</li>
+						<li>Cewnikowanie kobiet,</li>
+						<li>Zmiana opatrunków,</li>
+						<li>Założenie wenflonu,</li>
+						<li>Podłączenie kroplówki.</li>
+					</ul>
+					<br>
+					<div class="table-wrapper">
+						<table class="alt">
+							<thead>
+								<tr>
+									<th colspan="6"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td colspan="1"></td>
+									<td colspan="4"><center><b><a href="#kontakt">Odnośnie więcej informacji zapraszamy do zakładki &nbsp<i class="fa-xs fas fa-envelope"></i>&nbsp Kontakt</a></b></center></td>
+									<td colspan="1"></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="6"></td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
             </article>
 
-            <article id="oferta">
-                <h2 class="major">Oferta</h2>
-                <span class="image main"><picture><source type="image/webp" srcset="images/pic02.webp"><img src="images/pic02.webp" alt="" /></picture></span>
-                <p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-                <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque
-                    lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
-                <h3 class="major">Produkty</h3>
-				<h4>Szukaj</h4>
-                <div class="table-wrapper">
-					<div id="table-vue">
-                        <form id="search">
-                            <input name="query" v-model="searchQuery" />
-                        </form>
-                        <table-vue-grid :heroes="gridData" :columns="gridColumns" :filter-key="searchQuery">
-                        </table-vue-grid>
-                    </div>
-                        <thead>
-                            <tr>
-                                <th>&nbsp</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td colspan="3">&nbsp</td>
-                                <td></td>
-                                <td></td>
-							</tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2"></td>
-                                <td colspan="2"></td>
-                                <td>100.00<br><br><br>
-                                    <h4><a href="#kontakt">Kontakt</h4></a></td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-
-            </article>
+            <article id="serwis-techniczny">
+                <h2 class="major">Serwis Techniczny</h2>
+                <span class="image main"><picture><source type="image/webp" srcset="images/serwis-techniczny.webp"><img src="images/serwis-techniczny.webp" alt="Serwis Techniczny" /></picture></span>
+                <p>Świadczymy dla was szeroki usługi z zakresu serwisu urządzeń grzewczych. Naprawiamy kotły gazowe, olejowe, pelletowe, elektyczne, pompy ciepła, klimatyzatory, centrale wentylacyjne   </p>
+				<p>Dlaczego tak ważne jest wykonywanie regularnych przeglądów </p><br><br>
+					<h3 class="major">Oferta</h3>
+					<div class="table-wrapper">
+						<table>
+							<thead>
+								<tr>
+									<th colspan="6"><center><h4>Usługa</h4></center></th>
+									<th colspan="2"><center><h4>Cena od</h4></center></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td colspan="3"><b>Drobne naprawy hydrauliczne</b></td>
+									<td colspan="3">czyszczenie filtrów skośnych, wymiana filtrów wstępnych, wymiana uszczelek w kranie itp.</td>
+									<td colspan="2"><center>50zł</center></td>
+								</tr>
+								<tr>
+									<td colspan="3"><b>Przegląd kotła atmosferycznego</b></td>
+									<td colspan="3">Kompletny przegląd kotła atmosferycznego składa się z wyczyszczenie powierzchni palnikowej wymiennika, elektrody jonizacyjnej i zapłonowej. Sprawdzenie szczeloności hydraulicznej i gazowej oraz poprawności działania urządzenia</td>
+									<td colspan="2"><center>150zł</center></td>
+								</tr>
+								<tr>
+									<td colspan="3"><b>Przegląd kotła gazowego kondensacyjnego do 35 kW</b></td>
+									<td colspan="3">Kompletny przegląd kotłow</td>
+									<td colspan="2"><center>200zł</center></td>
+								</tr>
+								<tr>
+									<td colspan="6"><b>Przegląd kotła gazowego kondensacyjnego od 35 kW do 70kW</b></td>
+									<td colspan="2"><center>400zł</center></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="7"></td>
+									<td><br><br><br><h4><a href="#kontakt">Kontakt</h4></a></td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+			</article>
 
             <!-- About -->
-            <article id="firma">
-                <h2 class="major">O Nas</h2>
-                <span class="image main"><picture><source type="image/webp" srcset="images/pic03.webp"><img src="images/pic03.webp" alt="" /></picture></span>
-                <p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris
-                    nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
-            </article>
+            <article id="piaskowanie-srutowanie">
+                <h2 class="major">Piaskowanie / Śrutowanie</h2>
+                <span class="image main"><picture><source type="image/webp" srcset="images/piaskowanie-srutowanie.webp"><img src="images/piaskowanie-srutowanie.webp" alt="Piaskowanie Śrutowanie" /></picture></span><br><br>
+				<p>Piaskowanie to zabieg, który usuwa stara powierzchnie lakierniczą oraz korozję powstałą na metalu. Mimo że uzyskany efekt jest zbliżony do szlifowania, to jednak oczyszczona za pomocą piaskarki do piaskowania powierzchnia zyskuje delikatną szorstkość, która stanowi idealną bazę do malowania proszkowego. Czyszczenie powierzchni metalicznej odbywa się przy użyciu określonych materiałów ściernych pod ciśnieniem sprężonego powietrza lub pyłu.</p>
+				<ul class="alt">
+					<li>Usunięcie powłok malarskich, rdzy i zanieczyszczeń,</li>
+					<li>Ujednolicenie powierzchni,</li>
+					<li>Usunięcie skutków poprzednich obróbek,</li>
+					<li>Nadanie odpowiedniej chropowatości w celu przygotowania powierzchni pod malowanie, metalizację natryskową, laminowanie.</li>
+				</ul>
+				<br>
+				<p style="text-align:right"><a href="#kontakt"><h7>Kontakt</h7></a></p>
+			</article>
 
             <!-- Contact -->
             <article id="kontakt">
                 <h2 class="major">Kontakt</h2>
                 <div class="table-wrapper">
-                    <table class="alt">
+                    <table>
                         <thead>
                             <tr>
-                                <th><i class="fa-xs fas fa-address-card"></i>&nbsp Nazwa</th>
-                                <th><i class="fa-xs fas fa-building"></i>&nbsp Adres</th>
-                                <th><i class="fa-xs fas fa-phone"></i>&nbsp Telefon</th>
+                                <th colspan="5"><i class="fa-xs fas fa-address-card"></i>&nbsp Nazwa</th>
+                                <th colspan="5"><i class="fa-xs fas fa-building"></i>&nbsp Adres</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Nawroth SA</td>
-                                <td>ul. Trupia 40, 34-650 Piekiełko</td>
-                                <td><a href="tel:+48505505505">505-505-505</a>, <a href="tel:+48505505506">505-505-506</a></td>
+                                <td colspan="5">&nbsp &nbsp &nbsp Nawroth</td>
+                                <td colspan="5"><center>ul. Grzybowa 11, 43-600 Jaworzno</center></td>
                             </tr>
                             <tr>
-                                <br>
-                                <center>
-                                    <th colspan="3"><br>
-                                        <center>
-                                            <div id="Map" style="height:280px;width:90%"></div>
-                                        </center>
-                                    </th>
+                                <th colspan="1"></th>
+                                <th colspan="2"><br><br>Dział</th>
+                                <th colspan="2"></th>
+                                <th colspan="3"><br><br><center><i class="fa-xs fas fa-phone"></i>&nbsp Telefon</center></th>
+                            </tr>
+                            <tr>
+                                <td colspan="3">&#8226 &nbsp Usługi pielęgniarskie</td>
+                                <td colspan="2"></td>
+                                <td colspan="3"><center><a href="tel:+48889662694">889-662-694</a></center></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">&#8226 &nbsp Serwis urządzeń grzewczych</td>
+                                <td colspan="2"></td>
+                                <td colspan="3"><center><a href="tel:+48530071148">530-071-148</a></center></td>
+                            </tr>
+							<tr>
+                                <td colspan="3">• &nbsp; Obróbka ścierna</td>
+                                <td colspan="2"></td>
+                                <td colspan="3"><center><a href="tel:+48884310077">884-310-077</a></center></td>
+                            </tr>
+							<tr>
+								<td colspan="10">
+									<br>
+									<br>
+									<center>
+									<iframe class="googlemap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d740.0737545733999!2d19.320381529268776!3d50.189149798715036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716e82da25211d9%3A0x5f634eada76bb0b9!2sGrzybowa%2011%2C%2043-600%20Jaworzno!5e1!3m2!1spl!2spl!4v1613688582220!5m2!1spl!2spl"></iframe>
+									</center>
+									<br>
+									<br>
+								</td>
+                            </tr>
+                            <tr>
+                                <td colspan="8"><center><a href="#formularz-kontaktowy"><h5>Formularz kontaktowy</h5></a></center></td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="2"></td>
-                                <td><i class="fa-xs fas fa-envelope"></i> &nbsp<a href="mailto:kontakt@nawroth.pl" target="blank">kontakt@nawroth.pl</a></td>
+                                <td colspan="7"><br></td>
+                                <td colspan="1"><br><a href="mailto:kontakt@nawroth.pl" target="blank"><h7><i class="fa-xs fas fa-envelope"></i> kontakt@nawroth.pl</h7></a></td>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
             </article>
-
+			<article id="formularz-kontaktowy">
+				<h2 class="major">Formularz kontaktowy</h2>
+				<form method="post" action="assets/php/contact.php" id="contact-form">
+					<?php echo((!empty($errorMessage)) ? $errorMessage : '') ?>
+					<div class="fields">
+						<div class="field half">
+							<label for="name">Nazwa</label>
+							<input type="text" name="name" id="name" value="" placeholder="Proszę podać nadawcę *" required="required" data-error="Nazwa jest wymagana.">
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input type="text" name="email" id="email" value="" placeholder="Proszę podać adres e-mail *" required="required" data-error="Adres email jest wymagany.">
+						</div>
+						<div class="field">
+							<label for="message">Wiadomość</label>
+							<textarea name="message" id="message" value="" placeholder="Proszę podać treść wiadomości *" required="required" data-error="Treść wiadomości jest wymagana." rows="6"></textarea>
+						</div>
+					</div>
+					<ul class="actions">
+						<li><input type="submit" value="Wyślij wiadomość" class="primary g-recaptcha btn btn-success btn-send" data-sitekey="6LfSJl4aAAAAAHufY4lNSWzoWv2UVxZhICDTP-zV" data-callback='onRecaptchaSuccess' /></li>
+						<li><input type="reset" value="Wyczyść formularz" /></li>
+					</ul>
+				</form>
+			</article>
+			<article id="thank-you">
+                <h2 class="major">Dziękujemy za wiadomość!</h2>
+				<p style="text-align:center"><a href="#kontakt"><h3>Powrót.</h3></a></p>
+			</article>
         </div>
 
         <!-- Footer -->
@@ -217,28 +284,50 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-    <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.prod.js"></script>
-    <script src="assets/js/table-vue.js"></script>
-    <script src="assets/js/OpenLayers.js"></script>
-    <script>
-        var lat = 49.7477554;
-        var lon = 20.3420313;
-        var zoom = 17;
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+	<script>
+	  const constraints = {
+		  name: {
+			  presence: {allowEmpty: false}
+		  },
+		  email: {
+			  presence: {allowEmpty: false},
+			  email: true
+		  },
+		  message: {
+			  presence: {allowEmpty: false}
+		  }
+	  };
 
-        var fromProjection = new OpenLayers.Projection("EPSG:4326"); // Transform from WGS 1984
-        var toProjection = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
-        var position = new OpenLayers.LonLat(lon, lat).transform(fromProjection, toProjection);
+	  const form = document.getElementById('contact-form');
 
-        map = new OpenLayers.Map("Map");
-        var mapnik = new OpenLayers.Layer.OSM();
-        map.addLayer(mapnik);
+	  form.addEventListener('submit', function (event) {
+		  const formValues = {
+			  name: form.elements.name.value,
+			  email: form.elements.email.value,
+			  message: form.elements.message.value
+		  };
 
-        var markers = new OpenLayers.Layer.Markers("Markers");
-        map.addLayer(markers);
-        markers.addMarker(new OpenLayers.Marker(position));
+		  const errors = validate(formValues, constraints);
 
-        map.setCenter(position, zoom);
-    </script>
+		  if (errors) {
+			  event.preventDefault();
+			  const errorMessage = Object
+				  .values(errors)
+				  .map(function (fieldValues) {
+					  return fieldValues.join(', ')
+				  })
+				  .join("\n");
+
+			  alert(errorMessage);
+		  }
+	  }, false);
+
+	  function onRecaptchaSuccess () {
+		  document.getElementById('contact-form').submit()
+	  }
+	</script>
+	<script src="https://www.google.com/recaptcha/api.js"></script>
 </body>
 
 </html>

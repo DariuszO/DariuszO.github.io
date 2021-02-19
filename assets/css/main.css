@@ -1,5 +1,6 @@
 @import "table-vue.css"; 
 @import "all.css";
+@import "style.css";
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600);
 a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video {
     margin: 0;
@@ -156,6 +157,16 @@ h1,h2,h3,h4,h5,h6 {
     letter-spacing: .2rem
 }
 
+h7 {
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+	text-align: right;
+    letter-spacing: .2rem
+}
+
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
     color: inherit;
     text-decoration: none
@@ -180,7 +191,7 @@ h1 {
 h2 {
     font-size: 2.5rem;
     line-height: 1.4;
-    letter-spacing: .2rem
+    letter-spacing: .15rem;
 }
 
 h3 {
@@ -1213,14 +1224,16 @@ body.is-preload #bg:before {
 
 #header nav ul li a {
     display: block;
-    min-width: 7.5rem;
-    height: 2.75rem;
+    min-width: 8.75rem;
+    /* max-width: 26.75rem; */
+    min-height: 2.75rem;
+    max-height: 5.75rem;
     line-height: 2.75rem;
-    padding: 0 1.25rem 0 1.45rem;
+    padding: 0 0.6rem 0 0.8rem;
     text-transform: uppercase;
-    letter-spacing: .2rem;
+    letter-spacing: 0.125rem;
     font-size: .8rem;
-    border-bottom: 0
+    border-bottom: 0;
 }
 
 #header nav ul li a:hover {
@@ -1499,4 +1512,38 @@ body.is-article-visible #footer {
 
 body.is-preload #footer {
     opacity: 0
+}
+
+.googlemap {
+	width: 100%;
+	height: 480px;
+	frameborder: 0;
+	border: 0;
+	allowfullscreen: 1;
+	aria-hidden: false;
+	tabindex: 0
+}
+
+@media screen and (max-width: 480px) {
+	.googlemap {
+		width: 100%;
+		height: 240px;
+		frameborder: 0;
+		border: 0;
+		allowfullscreen: 1;
+		aria-hidden: false;
+		tabindex: 0
+	}
+}
+
+@media screen and (max-width: 736px) {
+	.googlemap {
+		width: 100%;
+		height: 360px;
+		frameborder: 0;
+		border: 0;
+		allowfullscreen: 1;
+		aria-hidden: false;
+		tabindex: 0
+	}
 }
