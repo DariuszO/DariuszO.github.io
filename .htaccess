@@ -1,0 +1,14 @@
+#Własna strona błędu 400
+ErrorDocument 400 index.html
+
+#Własna strona błędu 401
+ErrorDocument 401 index.html
+
+#Własna strona błędu 403
+ErrorDocument 403 index.html
+
+#Własna strona błędu 404
+ErrorDocument 404 index.html
+
+#Własna strona błędu 500
+ErrorDocument 500 index.html
