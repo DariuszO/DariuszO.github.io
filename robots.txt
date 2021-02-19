@@ -1,7 +1,2 @@
 User-agent: *
-Disallow: /.git/
-
-User-agent: *
 Disallow: /
-
-Sitemap: https://www.nawroth.pl/sitemap.xml
