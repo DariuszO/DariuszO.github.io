@@ -51,7 +51,23 @@
 </head>
 
 <body class="is-preload">
-
+	<div class="fixed-bottom p-4">
+		<div class="toast bg-dark text-white w-100 mw-100" role="alert" data-autohide="false">
+			<div class="toast-body p-4 d-flex flex-column">
+				<p>
+				W celu świadczenia usług na najwyższym poziomie stosujemy pliki cookies. Korzystanie z naszej witryny oznacza, że będą one zamieszczane w Państwa urządzeniu. W każdym momencie można dokonać zmiany ustawień Państwa przeglądarki. <a href="https://www.gov.pl/web/gov/polityka-dotyczaca-cookies">Zobacz politykę cookies.</a> 
+				</p>
+				<div class="ml-auto">
+					<button type="button" class="btn btn-outline-light mr-3" id="btnDeny">
+						Odrzuć
+					</button>
+					<button type="button" class="btn btn-light" id="btnAccept">
+						Akceptuj
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
     <div id="wrapper">
 
         <header id="header">
@@ -328,6 +344,58 @@
 	  }
 	</script>
 	<script src="https://www.google.com/recaptcha/api.js"></script>
+	<script>
+		function setCookie(name, value, days) {
+			var expires = "";
+			if (days) {
+				var date = new Date();
+				date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+				expires = "; expires=" + date.toUTCString();
+			}
+			document.cookie = name + "=" + (value || "") + expires + "; path=/";
+		}
+
+		function getCookie(name) {
+			var nameEQ = name + "=";
+			var ca = document.cookie.split(';');
+			for (var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+				if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+			}
+			return null;
+		}
+
+		function eraseCookie(name) {
+			document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+		}
+
+		function cookieConsent() {
+			if (!getCookie('allowCookies')) {
+				$('.toast').toast('show')
+			}
+		}
+
+		$('#btnDeny').click(() => {
+			eraseCookie('allowCookies')
+			$('.toast').toast('hide')
+		})
+
+		$('#btnAccept').click(() => {
+			setCookie('allowCookies', '1', 7)
+			$('.toast').toast('hide')
+		})
+
+		// load
+		cookieConsent()
+
+		// for demo / testing only
+		$('#btnReset').click(() => {
+			// clear cookie to show toast after acceptance
+			eraseCookie('allowCookies')
+			$('.toast').toast('show')
+		})
+	</script>
 </body>
 
 </html>
