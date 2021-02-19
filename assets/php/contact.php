@@ -43,8 +43,10 @@ if (!empty($_POST)) {
 
         $bodyParagraphs = ["Name: {$name}", "Email: {$email}", "Message:", $message];
         $body = join(PHP_EOL, $bodyParagraphs);
+		
+		$go = mail($toEmail, $emailSubject, $body, $headers);
 
-        if (mail($toEmail, $emailSubject, $body, $headers)) {
+        if (!$go) {
             header('Location: index.html#thank-you');
         } else {
             $errorMessage = "<p style='color: red;'>Oops, something went wrong. Please try again later</p>";
