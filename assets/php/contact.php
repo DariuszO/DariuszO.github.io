@@ -3,7 +3,7 @@
 $errors = [];
 $errorMessage = '';
 
-$secret = '6LfSJl4aAAAAAP9ZZgOdK-AHsu2NOsczRYJjiD0B';
+$secret = '6LehOV4aAAAAABfDvSLshEOR3pt1bG1_vtkHJM13';
 
 if (!empty($_POST)) {
     $name = $_POST['name'];
@@ -45,7 +45,7 @@ if (!empty($_POST)) {
         $body = join(PHP_EOL, $bodyParagraphs);
 
         if (mail($toEmail, $emailSubject, $body, $headers)) {
-            header('Location: thank-you.html');
+            header('Location: index.html#thank-you');
         } else {
             $errorMessage = "<p style='color: red;'>Oops, something went wrong. Please try again later</p>";
         }
