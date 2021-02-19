@@ -30,7 +30,7 @@ DirectoryIndex index.html
 RewriteEngine on
 
 # Cache po stronie przegladarki
-<FilesMatch ".(jpg|jpeg|png|gif|svg|css|js|webp)$">
+<FilesMatch ".(jpg|jpeg|png|gif|svg|css|js|webp|woff2|ico)$">
 Header set Cache-Control "max-age=1800"
 </FilesMatch>
 
@@ -47,6 +47,10 @@ AddOutputFilterByType DEFLATE application/javascript
 AddOutputFilterByType DEFLATE application/x-javascript
 AddOutputFilterByType DEFLATE application/json
 AddOutputFilterByType DEFLATE image/svg+xml
+AddOutputFilterByType DEFLATE image/png
+AddOutputFilterByType DEFLATE image/webp
+AddOutputFilterByType DEFLATE image/x-icon
+AddOutputFilterByType DEFLATE font/woff2
 
 # Przekierowanie domeny
 
