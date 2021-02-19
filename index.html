@@ -8,7 +8,7 @@
     <title>Nawroth</title>
 	
     <meta name="title" content="Nawroth">
-    <meta name="description" content="Naprawy bieżące systemów grzewczych (kotły gazowe, węglowe, elektryczne, olejowe, pompy ciepła), przeglądy okresowe miesięczne(klimatyzację, pompy ciepła, kotły), realizacja instalacji elektrycznych, grzewczych, sanitanych, rekuperacja, wentylacja, usługi pielęgnacyjne, zastrzyki, piaskowanie, śrutowanie.">
+    <meta name="description" content="Usługi wielobranżowe naprawy hydrauliczne, serwis kotłów gazowych, usługi pielęgnacyjne, zastrzyki, obróbka ścierna, piaskowanie, śrutowanie.">
     <meta name="category" content="Usługi wielobranżowe">
     <meta name="keywords" content "usługi pielęgnacyjne, serwis urządzeń grzewczych, piaskowanie, śrutowanie, usuwanie rdzy, usuwanie zanieczyszczeń, naprawy hydrauliczne, przegląd kotła gazowego, zastrzyki, pielęgnacje odleżyn">
     <meta name="language" content="pl">
@@ -21,7 +21,7 @@
 	<meta name='og:postal-code' content='43-600'>
 
     <meta name="og:title" content="Nawroth">
-    <meta name="og:description" content="Naprawy bieżące systemów grzewczych (kotły gazowe, węglowe, elektryczne, olejowe, pompy ciepła), przeglądy okresowe miesięczne(klimatyzację, pompy ciepła, kotły), realizacja instalacji elektrycznych, grzewczych, sanitanych, rekuperacja, wentylacja, usługi pielęgnacyjne, zastrzyki, piaskowanie, śrutowanie.">
+    <meta name="og:description" content="Usługi wielobranżowe naprawy hydrauliczne, serwis kotłów gazowych, usługi pielęgnacyjne, zastrzyki, obróbka ścierna, piaskowanie, śrutowanie.">
 
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -46,28 +46,11 @@
 	<meta name="msapplication-TileImage" content="assets/img/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
     <link rel="preload" href="assets/css/all.css" as="style">
-    <link rel="preload" href="images/1.webp" as="image">
 
 </head>
 
 <body class="is-preload">
-	<div class="fixed-bottom p-4">
-		<div class="toast bg-dark text-white w-100 mw-100" role="alert" data-autohide="false">
-			<div class="toast-body p-4 d-flex flex-column">
-				<p>
-				W celu świadczenia usług na najwyższym poziomie stosujemy pliki cookies. Korzystanie z naszej witryny oznacza, że będą one zamieszczane w Państwa urządzeniu. W każdym momencie można dokonać zmiany ustawień Państwa przeglądarki. <a href="https://www.gov.pl/web/gov/polityka-dotyczaca-cookies">Zobacz politykę cookies.</a> 
-				</p>
-				<div class="ml-auto">
-					<button type="button" class="btn btn-outline-light mr-3" id="btnDeny">
-						Odrzuć
-					</button>
-					<button type="button" class="btn btn-light" id="btnAccept">
-						Akceptuj
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
+
     <div id="wrapper">
 
         <header id="header">
@@ -244,46 +227,18 @@
 								</td>
                             </tr>
                             <tr>
-                                <td colspan="8"><center><a href="#formularz-kontaktowy"><h5>Formularz kontaktowy</h5></a></center></td>
+                                <td colspan="8"><center><a href="#"><h6>Strona główna.</h6></a></center></td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr>
                                 <td colspan="7"><br></td>
-                                <td colspan="1"><br><a href="mailto:kontakt@nawroth.pl" target="blank"><h7><i class="fa-xs fas fa-envelope"></i> kontakt@nawroth.pl</h7></a></td>
+                                <td colspan="1"><br><a href="mailto:kontakt@nawroth.pl" target="_blank"><h7><i class="fa-xs fas fa-envelope"></i> kontakt@nawroth.pl</h7></a></td>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
             </article>
-			<article id="formularz-kontaktowy">
-				<h2 class="major">Formularz kontaktowy</h2>
-				<form method="post" action="assets/php/contact.php" id="contact-form">
-					<?php echo((!empty($errorMessage)) ? $errorMessage : '') ?>
-					<div class="fields">
-						<div class="field half">
-							<label for="name">Nazwa</label>
-							<input type="text" name="name" id="name" value="" placeholder="Proszę podać nadawcę *" required="required" data-error="Nazwa jest wymagana.">
-						</div>
-						<div class="field half">
-							<label for="email">Email</label>
-							<input type="text" name="email" id="email" value="" placeholder="Proszę podać adres e-mail *" required="required" data-error="Adres email jest wymagany.">
-						</div>
-						<div class="field">
-							<label for="message">Wiadomość</label>
-							<textarea name="message" id="message" value="" placeholder="Proszę podać treść wiadomości *" required="required" data-error="Treść wiadomości jest wymagana." rows="6"></textarea>
-						</div>
-					</div>
-					<ul class="actions">
-						<li><input type="submit" value="Wyślij wiadomość" class="primary g-recaptcha btn btn-success btn-send" data-sitekey="6LehOV4aAAAAADJRwyUaMW0I39HIHN3UyjBjAjy3" data-callback='onRecaptchaSuccess' /></li>
-						<li><input type="reset" value="Wyczyść formularz" /></li>
-					</ul>
-				</form>
-			</article>
-			<article id="thank-you">
-                <h2 class="major">Dziękujemy za wiadomość!</h2>
-				<p style="text-align:center"><a href="#kontakt"><h3>Powrót.</h3></a></p>
-			</article>
         </div>
 
         <!-- Footer -->
@@ -300,102 +255,7 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
-	<script>
-	  const constraints = {
-		  name: {
-			  presence: {allowEmpty: false}
-		  },
-		  email: {
-			  presence: {allowEmpty: false},
-			  email: true
-		  },
-		  message: {
-			  presence: {allowEmpty: false}
-		  }
-	  };
 
-	  const form = document.getElementById('contact-form');
-
-	  form.addEventListener('submit', function (event) {
-		  const formValues = {
-			  name: form.elements.name.value,
-			  email: form.elements.email.value,
-			  message: form.elements.message.value
-		  };
-
-		  const errors = validate(formValues, constraints);
-
-		  if (errors) {
-			  event.preventDefault();
-			  const errorMessage = Object
-				  .values(errors)
-				  .map(function (fieldValues) {
-					  return fieldValues.join(', ')
-				  })
-				  .join("\n");
-
-			  alert(errorMessage);
-		  }
-	  }, false);
-
-	  function onRecaptchaSuccess () {
-		  document.getElementById('contact-form').submit()
-	  }
-	</script>
-	<script src="https://www.google.com/recaptcha/api.js"></script>
-	<script>
-		function setCookie(name, value, days) {
-			var expires = "";
-			if (days) {
-				var date = new Date();
-				date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-				expires = "; expires=" + date.toUTCString();
-			}
-			document.cookie = name + "=" + (value || "") + expires + "; path=/";
-		}
-
-		function getCookie(name) {
-			var nameEQ = name + "=";
-			var ca = document.cookie.split(';');
-			for (var i = 0; i < ca.length; i++) {
-				var c = ca[i];
-				while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-				if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-			}
-			return null;
-		}
-
-		function eraseCookie(name) {
-			document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-		}
-
-		function cookieConsent() {
-			if (!getCookie('allowCookies')) {
-				$('.toast').toast('show')
-			}
-		}
-
-		$('#btnDeny').click(() => {
-			eraseCookie('allowCookies')
-			$('.toast').toast('hide')
-		})
-
-		$('#btnAccept').click(() => {
-			setCookie('allowCookies', '1', 7)
-			$('.toast').toast('hide')
-		})
-
-		// load
-		cookieConsent()
-
-		// for demo / testing only
-		$('#btnReset').click(() => {
-			// clear cookie to show toast after acceptance
-			eraseCookie('allowCookies')
-			$('.toast').toast('show')
-		})
-	</script>
 </body>
 
 </html>
