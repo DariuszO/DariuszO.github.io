@@ -15,7 +15,7 @@ deny from all
 
 Options All -Indexes
 
-DirectoryIndex index.amp.html
+DirectoryIndex index.html
 
 <FilesMatch ".(jpg|jpeg|png|gif|svg|css|js|webp|woff2|ico)$">
 Header set Cache-Control "max-age=1800"
